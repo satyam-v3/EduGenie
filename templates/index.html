@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="app-title">EduGenie: AI-Powered Educational Content Creator</h1>
+
+        <div class="input-section">
+            <label for="courseTitle" class="input-label">Course Title:</label>
+            <input type="text" id="courseTitle" class="input-field" placeholder="Enter course Title">
+            <button id="generateButton" class="generate-button">Generate Content</button>
+        </div>
+
+        <p id="loadingMessage" class="loading-message" style="display: none;">Generating content, please wait...</p>
+
+        <div class="output-container">
+            <div class="output-header">
+                <h2>Output:</h2>
+                <button class="copy-button" id="copyButton">Copy</button>
+            </div>
+            <div class="output-content" id="outputContent">
+                Your generated educational content will appear here. Click "Generate Content" to start.
+            </div>
+        </div>
+
+        <div class="privacy-notice">
+            <p>
+                <strong>Data Privacy Notice:</strong> Your input data is used only to generate educational content and
+                is not stored.
+            </p>
+        </div>
+    </div>
+    <div id="customAlertModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeAlertButton">&times;</span>
+            <p id="alertMessage"></p>
+            <button class="modal-button" id="modalOkButton">OK</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</body>
+
+</html>
